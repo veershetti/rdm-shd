@@ -97,5 +97,6 @@ def tutorial_list(request):
         print(serializer)
         if serializer.is_valid():
             serializer.save()
-            return JsonResponse(serializer.data, status=status.HTTP_201_CREATED) 
-        return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            print("serializer.data",serializer.data)
+            return JsonResponse(serializer.data, status=200) 
+        return JsonResponse(serializer.errors, status=400)
